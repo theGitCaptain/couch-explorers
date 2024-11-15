@@ -7,8 +7,8 @@ Description: >
 
 Globals:
   Function:
-    Timeout: 10
-    MemorySize: 256
+    Timeout: 180
+    MemorySize: 512
 
 Resources:
   GenerateImageFunction:
