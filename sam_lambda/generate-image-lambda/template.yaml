@@ -27,6 +27,11 @@ Resources:
         - S3WritePolicy:
             BucketName: "pgr301-couch-explorers"
         - AWSLambdaBasicExecutionRole
+        - Statement:
+            Effect: "Allow"
+            Action:
+              - "bedrock:InvokeModel"
+            Resource: "arn:aws:bedrock:us-east-1::foundation-model/amazon.titan-image-generator-v1"
       Events:
         GenerateImageApi:
           Type: Api
