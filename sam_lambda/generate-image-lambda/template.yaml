@@ -1,0 +1,46 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  generate-image-lambda
+
+  SAM Template for the Generate Image Lambda Function
+
+Globals:
+  Function:
+    Timeout: 10
+    MemorySize: 256
+
+Resources:
+  GenerateImageFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: generate_image/
+      Handler: app.lambda_handler
+      Runtime: python3.8
+      Architectures:
+        - x86_64
+      Environment:
+        Variables:
+          S3_BUCKET: "pgr301-couch-explorers"
+          CANDIDATE_NUMBER: "56"
+      Policies:
+        - S3WritePolicy:
+            BucketName: "pgr301-couch-explorers"
+        - AWSLambdaBasicExecutionRole
+      Events:
+        GenerateImageApi:
+          Type: Api
+          Properties:
+            Path: /generate
+            Method: post
+
+Outputs:
+  GenerateImageApi:
+    Description: "API Gateway endpoint URL for Generate Image function"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/generate/"
+  GenerateImageFunction:
+    Description: "Generate Image Lambda Function ARN"
+    Value: !GetAtt GenerateImageFunction.Arn
+  GenerateImageFunctionIamRole:
+    Description: "Implicit IAM Role created for Generate Image function"
+    Value: !GetAtt GenerateImageFunctionRole.Arn
