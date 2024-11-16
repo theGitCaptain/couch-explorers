@@ -2,13 +2,6 @@ name: Terraform Deployment
 
 on:
   push:
-    branches:
-      - main
-    paths:
-      - 'infra/**'
-  pull_request:
-    branches:
-      - '*'
     paths:
       - 'infra/**'
 
@@ -32,16 +25,21 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
+      - name: Zip Lambda Function
+        run: |
+          cd infra
+          zip lambda_sqs.zip lambda_sqs.py
+
       - name: Initialize Terraform
-        run: terraform init
-        working-directory: infra
+        run: cd infra && terraform init
+
+      - name: Terraform Format Check
+        run: cd infra && terraform fmt -check
 
       - name: Terraform Plan (Non-main branches)
         if: github.ref != 'refs/heads/main'
-        run: terraform plan
-        working-directory: infra
+        run: cd infra && terraform plan
 
       - name: Terraform Apply (Main branch)
         if: github.ref == 'refs/heads/main'
-        run: terraform apply -auto-approve
-        working-directory: infra
+        run: cd infra && terraform apply -auto-approve
