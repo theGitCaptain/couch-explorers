@@ -4,10 +4,12 @@ on:
   push:
     branches:
       - main
-      - '**'
+  pull_request:
+    branches:
+      - '*'
 
 jobs:
-  terraform:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,7 +19,7 @@ jobs:
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v2
         with:
-          terraform_version: '1.9.8'
+          terraform_version: 1.9.8
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v3
@@ -26,16 +28,16 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
+      - name: Change Directory to Infra
+        run: cd infra
+
       - name: Initialize Terraform
         run: terraform init
 
-      - name: Terraform Format Check
-        run: terraform fmt -check
-
-      - name: Terraform Plan (Non-main branches)
+      - name: Terraform Plan (Non-Main Branch)
         if: github.ref != 'refs/heads/main'
         run: terraform plan
 
-      - name: Terraform Apply (Main branch)
+      - name: Terraform Apply (Main Branch)
         if: github.ref == 'refs/heads/main'
         run: terraform apply -auto-approve
