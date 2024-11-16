@@ -28,16 +28,16 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Change Directory to Infra
-        run: cd infra
-
       - name: Initialize Terraform
         run: terraform init
+        working-directory: infra
 
       - name: Terraform Plan (Non-Main Branch)
         if: github.ref != 'refs/heads/main'
         run: terraform plan
+        working-directory: infra
 
       - name: Terraform Apply (Main Branch)
         if: github.ref == 'refs/heads/main'
         run: terraform apply -auto-approve
+        working-directory: infra
