@@ -33,7 +33,7 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Build SAM Application
-        run: sam build
+        run: sam build -t sam_lambda/generate-image-lambda/template.yaml
 
       - name: Deploy SAM Application
-        run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name generate-image-lambda --capabilities CAPABILITY_IAM
+        run: sam deploy -t sam_lambda/generate-image-lambda/template.yaml --no-confirm-changeset --no-fail-on-empty-changeset --stack-name generate-image-lambda --capabilities CAPABILITY_IAM
