@@ -1,14 +1,6 @@
-         ___        ______     ____ _                 _  ___  
-        / \ \      / / ___|   / ___| | ___  _   _  __| |/ _ \ 
-       / _ \ \ /\ / /\___ \  | |   | |/ _ \| | | |/ _` | (_) |
-      / ___ \ V  V /  ___) | | |___| | (_) | |_| | (_| |\__, |
-     /_/   \_\_/\_/  |____/   \____|_|\___/ \__,_|\__,_|  /_/ 
- ----------------------------------------------------------------- 
+## Task Deliveries
 
-
-Hi there! Welcome to AWS Cloud9!
-
-To get started, create some files, play with the terminal,
-or visit https://docs.aws.amazon.com/console/cloud9/ for our documentation.
-
-Happy coding!
+| Task Number | Delivery Description               | Link/Details                       |
+|-------------|------------------------------------|------------------------------------|
+| Task 1      | HTTP endpoint for Lambda function  | [API Gateway URL](https://uxhce5lwq2.execute-api.eu-west-1.amazonaws.com/Prod/generate/) |
+| Task 1      | GitHub Actions workflow run        | [Workflow Run Link](https://github.com/theGitCaptain/couch-explorers/actions/runs/11872331862) |
