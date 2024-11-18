@@ -25,7 +25,7 @@ resource "aws_sqs_queue" "image_queue" {
 
 # IAM Role for Lambda
 resource "aws_iam_role" "lambda_role" {
-  name = "lambda_sqs_role"
+  name = "lambda_sqs_role_56"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
