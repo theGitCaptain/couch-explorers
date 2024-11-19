@@ -4,13 +4,13 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'sam_lambda/**'
+    # paths:
+    #   - 'sam_lambda/**'
   pull_request:
     branches:
       - main
-    paths:
-      - 'sam_lambda/**'
+    # paths:
+    #   - 'sam_lambda/**'
 
 jobs:
   deploy:
