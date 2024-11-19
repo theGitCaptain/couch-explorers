@@ -1,11 +1,14 @@
 FROM maven:3.9.4-eclipse-temurin-17 AS builder
 WORKDIR /app
 
-COPY . /app
+# Copying only the necessary files for cache efficiency
+COPY pom.xml .
+COPY src ./src
 
 RUN mvn clean package -DskipTests
 
-FROM eclipse-temurin:17-jre
+# Lightweight runtime image
+FROM eclipse-temurin:17-jre-slim
 WORKDIR /app
 
 COPY --from=builder /app/target/imagegenerator-0.0.1-SNAPSHOT.jar /app/imagegenerator.jar

@@ -22,12 +22,18 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
+      - name: Extract Version Tag
+        id: get_version
+        run: echo "VERSION=$(date +'%Y%m%d.%H%M%S')" >> $GITHUB_ENV
+
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
           context: java_sqs_client
           push: true
-          tags: thegitcaptain/couchexplore-client:latest
+          tags: |
+            thegitcaptain/couchexplore-client:${{ env.VERSION }}
+            thegitcaptain/couchexplore-client:latest
 
       - name: Logout from Docker Hub
         run: docker logout
