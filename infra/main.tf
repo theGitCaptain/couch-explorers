@@ -21,6 +21,7 @@ provider "aws" {
 # SQS Queue
 resource "aws_sqs_queue" "image_queue" {
   name = "image-generation-queue-56"
+  visibility_timeout_seconds = 60
 }
 
 # IAM Role for Lambda
@@ -41,7 +42,7 @@ resource "aws_iam_role" "lambda_role" {
 
 # IAM Policy for Lambda (Updated with CloudWatch Permissions)
 resource "aws_iam_policy" "lambda_policy" {
-  name        = "lambda_sqs_policy"
+  name        = "lambda_sqs_policy_56"
   description = "Policy for Lambda to access SQS, S3, CloudWatch Logs, and Bedrock"
 
   policy = jsonencode({
@@ -97,7 +98,7 @@ resource "aws_lambda_function" "image_lambda" {
     }
   }
 
-  timeout = 30
+  timeout = 60
 }
 
 # SQS Trigger for Lambda
@@ -107,4 +108,3 @@ resource "aws_lambda_event_source_mapping" "sqs_trigger" {
   enabled          = true
   batch_size       = 5
 }
-# Trigger workflow
