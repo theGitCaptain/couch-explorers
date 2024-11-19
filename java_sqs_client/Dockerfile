@@ -8,7 +8,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Lightweight runtime image
-FROM eclipse-temurin:17-jre-slim
+FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 COPY --from=builder /app/target/imagegenerator-0.0.1-SNAPSHOT.jar /app/imagegenerator.jar
