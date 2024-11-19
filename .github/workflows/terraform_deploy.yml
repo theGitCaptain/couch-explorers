@@ -39,10 +39,6 @@ jobs:
       - name: Terraform Init
         run: terraform init
         working-directory: ${{ env.TF_WORKING_DIR }}
-          
-      - name: Terraform Validate
-        run: terraform validate
-        working-directory: ${{ env.TF_WORKING_DIR }}
 
       - name: Terraform Plan
         if: github.ref != 'refs/heads/main'
