@@ -3,7 +3,6 @@ import boto3
 import json
 import os
 import random
-import uuid
 
 bedrock_client = boto3.client("bedrock-runtime", region_name="us-east-1")
 s3_client = boto3.client("s3")
@@ -36,8 +35,7 @@ def generate_image(prompt):
     return image_data, seed
     
 def upload_image_to_s3(image_data, seed):
-    unique_id = str(uuid.uuid4())
-    s3_image_path = f"{CANDIDATE_NUMBER}/titan_{unique_id}.png"
+    s3_image_path = f"{CANDIDATE_NUMBER}/titan_{seed}.png"
     s3_client.put_object(Bucket=BUCKET_NAME, Key=s3_image_path, Body=image_data)
     image_url = f"s3://{BUCKET_NAME}/{s3_image_path}"
     
