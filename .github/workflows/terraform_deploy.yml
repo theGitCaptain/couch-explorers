@@ -6,7 +6,7 @@ on:
     #   - 'infra/**'
   pull_request:
     # paths:
-    #   - 'infra/**'
+    #   - 'infra/**' 
 
 jobs:
   terraform:
