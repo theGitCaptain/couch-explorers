@@ -2,11 +2,11 @@ name: Terraform Deploy
 
 on:
   push:
-    # paths:
-    #   - 'infra/**'
+    paths:
+      - 'infra/**'
   pull_request:
-    # paths:
-    #   - 'infra/**' 
+    paths:
+      - 'infra/**'
 
 jobs:
   terraform:
