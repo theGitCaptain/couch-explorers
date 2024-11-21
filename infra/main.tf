@@ -139,7 +139,7 @@ resource "aws_sns_topic_subscription" "sqs_alarm_email_subscription" {
   endpoint  = var.alert_email
 }
 
-# Alert Email Variable
+# Alert Email Variable 
 variable "alert_email" {
   description = "Email address for CloudWatch alarm notifications"
   type        = string
