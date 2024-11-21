@@ -2,17 +2,17 @@
 
 ## Task 1
 ### A. HTTP Endpoint for Lambda Function
-- [Generate Image Endpoint](https://uxhce5lwq2.execute-api.eu-west-1.amazonaws.com/Prod/generate/)
+- `https://uxhce5lwq2.execute-api.eu-west-1.amazonaws.com/Prod/generate/`
 
 ### B. GitHub Actions Workflow Run
-- [Workflow Run for Lambda Deployment](https://github.com/theGitCaptain/couch-explorers/actions/runs/11914701663)
+- `https://github.com/theGitCaptain/couch-explorers/actions/runs/11914701663`
 
 ---
 
 ## Task 2
 ### GitHub Actions Workflow Runs
-- **Test Branch - Terraform Plan:** [Workflow Run](https://github.com/theGitCaptain/couch-explorers/actions/runs/11915036164)
-- **Main Branch - Terraform Apply:** [Workflow Run](https://github.com/theGitCaptain/couch-explorers/actions/runs/11915188222)
+- **Test Branch - Terraform Plan:** `https://github.com/theGitCaptain/couch-explorers/actions/runs/11915036164`
+- **Main Branch - Terraform Apply:** `https://github.com/theGitCaptain/couch-explorers/actions/runs/11915188222`
 
 ### SQS Queue URL
 - `https://sqs.eu-west-1.amazonaws.com/244530008913/image-generation-queue-56`
@@ -33,12 +33,21 @@ The approach is practical for automation, as the timestamp tags are generated dy
 - `https://sqs.eu-west-1.amazonaws.com/244530008913/image-generation-queue-56`
 
 
+## Task 4
+### Alarm
+The task did not ask for any specific delivery, but I chose to set the trigger for the alarm to 60 seconds. I made a terraform.tfvars file for entering the email, and just set it to a default email after testing that the alarm worked with my own email.
+
+### Cloudwatch Alarm  URL
+- `https://eu-west-1.console.aws.amazon.com/cloudwatch/home?region=eu-west-1#alarmsV2:alarm/sqs-age-of-oldest-message-alarm-56?~(search~'56)
+
+## Task 5
+
+
 | Task Number | Delivery Description                     | Link/Details                       |
 |-------------|------------------------------------------|------------------------------------|
 | Task 1      | HTTP endpoint for Lambda function        | `https://uxhce5lwq2.execute-api.eu-west-1.amazonaws.com/Prod/generate/` |
-| Task 1      | GitHub Actions workflow run              | `https://github.com/theGitCaptain/couch-explorers/actions/runs/11872331862` |
-| Task 2      | GitHub Actions run (Main Branch - Apply) | `https://github.com/theGitCaptain/couch-explorers/actions/runs/11896100681` |
-| Task 2      | GitHub Actions run (Test Branch - Plan)  | `https://github.com/theGitCaptain/couch-explorers/actions/runs/11896414342` |
-| Task 2 & 3  | SQS Queue URL                            | `https://sqs.eu-west-1.amazonaws.com/244530008913/image-generation-queue-56` |
+| Task 1      | GitHub Actions workflow run              | `https://github.com/theGitCaptain/couch-explorers/actions/runs/11914701663` |
+| Task 2      | GitHub Actions run (Test Branch - Plan)  | `https://github.com/theGitCaptain/couch-explorers/actions/runs/11915036164` |
+| Task 2      | GitHub Actions run (Main Branch - Apply) | `https://github.com/theGitCaptain/couch-explorers/actions/runs/11915188222` |
+| Task 2      | SQS Queue URL                            | `https://sqs.eu-west-1.amazonaws.com/244530008913/image-generation-queue-56` |
 | Task 3      | Container Image Name                     | `thegitcaptain/couchexplore-client:latest` |
-| Task 3      | GitHub Actions Workflow Run              | `https://github.com/theGitCaptain/couch-explorers/actions/runs/11898349911` |
