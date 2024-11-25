@@ -45,7 +45,7 @@ Outputs:
     Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/generate/"
   GenerateImage56Function:
     Description: "Generate Image Lambda Function ARN"
-    Value: !GetAtt GenerateImageFunction.Arn
+    Value: !GetAtt GenerateImage56Function.Arn
   GenerateImage56FunctionIamRole:
     Description: "Implicit IAM Role created for Generate Image function"
-    Value: !GetAtt GenerateImageFunctionRole.Arn
+    Value: !GetAtt GenerateImage56FunctionRole.Arn
