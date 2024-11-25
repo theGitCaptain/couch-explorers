@@ -3,7 +3,7 @@ Transform: AWS::Serverless-2016-10-31
 Description: >
   generate-image-lambda
 
-  SAM Template for the Generate Image Lambda Function
+  SAM Template for the Generate Image Lambda Function 
 
 Globals:
   Function:
