@@ -11,7 +11,7 @@ Globals:
     MemorySize: 512
 
 Resources:
-  GenerateImageFunction:
+  GenerateImage56Function:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: generate_image/
@@ -33,14 +33,14 @@ Resources:
               - "bedrock:InvokeModel"
             Resource: "arn:aws:bedrock:us-east-1::foundation-model/amazon.titan-image-generator-v1"
       Events:
-        GenerateImageApi:
+        GenerateImageApi56:
           Type: Api
           Properties:
             Path: /generate
             Method: post
 
 Outputs:
-  GenerateImageApi:
+  GenerateImageApi56:
     Description: "API Gateway endpoint URL for Generate Image function"
     Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/generate/"
   GenerateImageFunction:
