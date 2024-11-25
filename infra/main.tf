@@ -101,7 +101,7 @@ resource "aws_lambda_function" "image_lambda" {
   timeout = 60
 }
 
-# SQS Trigger for Lambda
+# SQS Trigger for Lambda  
 resource "aws_lambda_event_source_mapping" "sqs_trigger" {
   event_source_arn = aws_sqs_queue.image_queue.arn
   function_name    = aws_lambda_function.image_lambda.arn
