@@ -2,17 +2,17 @@
 
 ## Task 1
 ### A. HTTP Endpoint for Lambda Function
-- `https://uxhce5lwq2.execute-api.eu-west-1.amazonaws.com/Prod/generate/`
+- `https://ar4yl99c6b.execute-api.eu-west-1.amazonaws.com/Prod/generate`
 
 ### B. GitHub Actions Workflow Run
-- `https://github.com/theGitCaptain/couch-explorers/actions/runs/11914701663`
+- `https://github.com/theGitCaptain/couch-explorers/actions/runs/12012521344`
 
 ---
 
 ## Task 2
 ### GitHub Actions Workflow Runs
-- **Test Branch - Terraform Plan:** `https://github.com/theGitCaptain/couch-explorers/actions/runs/11915036164`
-- **Main Branch - Terraform Apply:** `https://github.com/theGitCaptain/couch-explorers/actions/runs/11915188222`
+- **Test Branch - Terraform Plan:** `https://github.com/theGitCaptain/couch-explorers/actions/runs/12019599618`
+- **Main Branch - Terraform Apply:** `https://github.com/theGitCaptain/couch-explorers/actions/runs/12013066204`
 
 ### SQS Queue URL
 - `https://sqs.eu-west-1.amazonaws.com/244530008913/image-generation-queue-56`
@@ -45,9 +45,9 @@ The task did not ask for any specific delivery, but I chose to set the trigger f
 
 | Task Number | Delivery Description                     | Link/Details                       |
 |-------------|------------------------------------------|------------------------------------|
-| Task 1      | HTTP endpoint for Lambda function        | `https://uxhce5lwq2.execute-api.eu-west-1.amazonaws.com/Prod/generate/` |
-| Task 1      | GitHub Actions workflow run              | `https://github.com/theGitCaptain/couch-explorers/actions/runs/11914701663` |
+| Task 1      | HTTP endpoint for Lambda function        | `https://ar4yl99c6b.execute-api.eu-west-1.amazonaws.com/Prod/generate` |
+| Task 1      | GitHub Actions workflow run              | `https://github.com/theGitCaptain/couch-explorers/actions/runs/12012521344` |
 | Task 2      | GitHub Actions run (Test Branch - Plan)  | `https://github.com/theGitCaptain/couch-explorers/actions/runs/11915036164` |
-| Task 2      | GitHub Actions run (Main Branch - Apply) | `https://github.com/theGitCaptain/couch-explorers/actions/runs/11915188222` |
+| Task 2      | GitHub Actions run (Main Branch - Apply) | `https://github.com/theGitCaptain/couch-explorers/actions/runs/12013066204` |
 | Task 2      | SQS Queue URL                            | `https://sqs.eu-west-1.amazonaws.com/244530008913/image-generation-queue-56` |
 | Task 3      | Container Image Name                     | `thegitcaptain/couchexplore-client:latest` |
