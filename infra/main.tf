@@ -24,7 +24,7 @@ resource "aws_sqs_queue" "image_queue" {
   visibility_timeout_seconds = 60
 }
 
-# IAM Role for Lambda
+# IAM Role for Lambda  
 resource "aws_iam_role" "lambda_role" {
   name = "lambda_sqs_role_56"
 
@@ -40,7 +40,7 @@ resource "aws_iam_role" "lambda_role" {
   })
 }
 
-# IAM Policy for Lambda 
+# IAM Policy for Lambda
 resource "aws_iam_policy" "lambda_policy" {
   name        = "lambda_sqs_policy_56"
   description = "Policy for Lambda to access SQS, S3, CloudWatch Logs, and Bedrock"
