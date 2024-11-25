@@ -7,7 +7,7 @@ COPY src ./src
 
 RUN mvn clean package -DskipTests
 
-# Lightweight runtime image
+# Lightweight runtime image 
 FROM openjdk:17-jdk-slim
 WORKDIR /app
 
